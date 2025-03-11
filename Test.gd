@@ -7,6 +7,7 @@ func _ready() -> void:
 		DisplayServer.window_set_title("SERVER")
 		var session = await PackRTC.host()
 		await session.peer_ready
+		print("Server ready")
 		multiplayer.multiplayer_peer = session.rtc_peer
 		multiplayer.peer_connected.connect(_peer_connected)
 		multiplayer.peer_disconnected.connect(_peer_disconnected)

@@ -1,7 +1,7 @@
 extends Node
 
 ## PackRTC Signaler URL, change this if you want to use your own instance.
-var packrtc_url = "http://127.0.0.1:3000"
+var packrtc_url = "https://packcloud.himaji.xyz"
 
 var _http: AwaitableHTTPRequest
 ## Get the current session
@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func host():
 	var req := await _http.async_request(
-		packrtc_url + "/session/host",
+		packrtc_url.trim_suffix("/") + "/session/host",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		JSON.stringify({
@@ -48,7 +48,7 @@ func join(code: String):
 	print("Joining ", code)
 	
 	var req := await _http.async_request(
-		packrtc_url + "/session/join/" + code,
+		packrtc_url.trim_suffix("/") + "/session/join/" + code,
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		JSON.stringify({
