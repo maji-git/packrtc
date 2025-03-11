@@ -3,10 +3,9 @@ extends EditorPlugin
 
 
 func _enter_tree() -> void:
-	# Initialization of the plugin goes here.
-	pass
+	if not ProjectSettings.has_setting("autoload/PackRTC"):
+		add_autoload_singleton("PackRTC", "res://addons/packrtc/scripts/PackRTC.gd")
 
 
 func _exit_tree() -> void:
-	# Clean-up of the plugin goes here.
-	pass
+	remove_autoload_singleton("PackRTC")

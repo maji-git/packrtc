@@ -21,7 +21,7 @@ PackRTC="*res://addons/packrtc/scripts/PackRTC.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/packrtc/plugin.cfg")
+enabled=PackedStringArray("res://addons/awaitable_http_request/plugin.cfg", "res://addons/nodewebsockets/plugin.cfg", "res://addons/packrtc/plugin.cfg")
 
 [rendering]
 
