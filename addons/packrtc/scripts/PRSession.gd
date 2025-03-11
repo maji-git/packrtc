@@ -3,12 +3,14 @@ class_name PRSession
 
 var code: String = ""
 var ws_url: String = ""
+## Multiplayer peer
 var rtc_peer : WebRTCMultiplayerPeer
 var peer_id = -1
 var peers = []
 var connection_list = {}
 var ws: WebSocketClient
 
+## Emit when the peer is ready to go
 signal peer_ready(peer: WebRTCMultiplayerPeer)
 
 func _ready() -> void:
