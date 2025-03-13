@@ -8,4 +8,10 @@ PackRTC is a P2P multiplayer solution for Godot games, powered by WebRTC. Develo
 
 **WIP** - Coming soon to Godot Asset Library
 
+## Dependencies
+Credit to those open source project that make this project happen 💝
+
+- [AwaitableHTTPRequest](https://github.com/Swarkin/Godot-AwaitableHTTPRequest) by [Swarkin](https://github.com/Swarkin)
+- [NodeWebSockets](https://github.com/IcterusGames/NodeWebSockets) by [IcterusGames](https://github.com/IcterusGames)
+
 Built with 💖 by maji.
