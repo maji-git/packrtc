@@ -10,6 +10,8 @@ var session: PRSession
 var game_code: String
 ## Channel for your game, this code is unique to your game. Set it before hosting/joining
 var game_channel: String = "none"
+## Determine if debug mode is enabled, if it's. The room code will always be "TEST"
+var enable_debug: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,13 +20,18 @@ func _ready() -> void:
 	#host()
 
 func host():
+	var dbug = false
+	
+	if enable_debug and OS.has_feature("editor"):
+		dbug = true
+	
 	var req := await _http.async_request(
 		packrtc_url.trim_suffix("/") + "/session/host",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		JSON.stringify({
 			channel = game_channel,
-			is_debug = OS.has_feature("editor")
+			is_debug = dbug
 		})
 	)
 	
