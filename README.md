@@ -13,5 +13,6 @@ Credit to those open source project that make this project happen 💝
 
 - [AwaitableHTTPRequest](https://github.com/Swarkin/Godot-AwaitableHTTPRequest) by [Swarkin](https://github.com/Swarkin)
 - [NodeWebSockets](https://github.com/IcterusGames/NodeWebSockets) by [IcterusGames](https://github.com/IcterusGames)
+- [WebRTC Native](https://github.com/godotengine/webrtc-native) by Godot
 
 Built with 💖 by maji.
