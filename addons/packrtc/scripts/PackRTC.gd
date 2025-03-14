@@ -31,8 +31,7 @@ func host():
 	var data = req.body_as_json()
 	
 	if data.success == false:
-		print(data.code)
-		return
+		return data.code
 	
 	var s = PRSession.new()
 	s.code = data.code
@@ -59,8 +58,7 @@ func join(code: String):
 	var data = req.body_as_json()
 	
 	if data.success == false:
-		print(data.code)
-		return
+		return data.code
 	
 	var s = PRSession.new()
 	s.code = code
