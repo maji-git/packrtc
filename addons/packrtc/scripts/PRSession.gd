@@ -52,6 +52,9 @@ func init_rtc():
 	rtc_peer = WebRTCMultiplayerPeer.new()
 	rtc_peer.create_mesh(peer_id)
 	
+	multiplayer.peer_connected.connect(_peer_connected)
+	multiplayer.peer_disconnected.connect(_peer_disconnected)
+	
 	connection_list.clear()
 	
 	for peer_id in peers:
@@ -61,6 +64,12 @@ func init_rtc():
 	ws.send_text(JSON.stringify({
 		data_type = "ready"
 	}))
+
+func _peer_connected(id):
+	peers.append(id)
+
+func _peer_disconnected(id):
+	peers.erase(id)
 
 func add_peer(pid):
 	var connection = WebRTCPeerConnection.new()
