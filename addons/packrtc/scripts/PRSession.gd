@@ -76,7 +76,7 @@ func add_peer(pid):
 	connection_list[pid] = connection
 	rtc_peer.add_peer(connection, pid)
 	
-	if peer_id == 1:
+	if int(peer_id) % 2 == 0:
 		connection.create_offer()
 
 func session_created(type: String, sdp: String, connection : WebRTCPeerConnection):

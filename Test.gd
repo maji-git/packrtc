@@ -17,6 +17,8 @@ func _ready() -> void:
 		var session = await PackRTC.join("TEST")
 		await session.peer_ready
 		multiplayer.multiplayer_peer = session.rtc_peer
+		multiplayer.peer_connected.connect(_peer_connected)
+		multiplayer.peer_disconnected.connect(_peer_disconnected)
 
 func _peer_connected(id):
 	print(id, " connected")
